@@ -69,7 +69,8 @@ class CategoriaController extends Controller
     {
         $categoria=Categoria::findOrFail($id);
         DB::table('categoria')->where('codcategoria', '=', $id)->delete();
-        $categoria->save(); 
+        $categoria->save();
+        DB::table('producto')->where('codcategoria','=',$id)->delete();
         return redirect()->route('categoria.index')->with('datos','Registro Eliminado');
     }
 }
