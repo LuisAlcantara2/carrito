@@ -26,3 +26,12 @@ Route::get('cancelar', function(){
     return redirect()->route('categoria.index')->with('datos','Accion Cancelada');
 })->name('cancelar');
 Route::get('categoria/{codcategoria}/confirmar','CategoriaController@confirmar')->name('categoria.confirmar');
+
+
+Route::resource('producto','ProductoController');
+Route::get('/cancelar1', function(){
+    return redirect()->route('producto.index')->with('datos','Accion Cancelada');
+})->name('cancelar1');
+Route::get('producto/{codproducto}/confirmar','ProductoController@confirmar')->name('producto.confirmar');
+
+
