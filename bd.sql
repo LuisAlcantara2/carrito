@@ -10,7 +10,7 @@ create table VENTA(
     id int,
     codcliente int
 );
-
+/*hola pepe*/
 create table CLIENTE(
     codcliente serial primary key,
     nombre varchar(100),
