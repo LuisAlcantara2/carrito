@@ -19,7 +19,7 @@ create table CLIENTE(
     email varchar(40)
 );
 
-
+/*prueba cambio*/
 
 create table DETALLEVENTA(
     coddetalle serial primary key,
