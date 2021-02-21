@@ -1,6 +1,6 @@
 
 <h3>LISTADO DE CATEGORIAS</h3>
-<a href="" class="btn btn-primary"><i class="fas fa-plus"></i>Nuevo Registro</a>
+<a href="{{route('categoria.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i>Nuevo Registro</a>
 <nav class="navbar float-right">
     <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar por descrpcion" aria-label="Search" id="buscarpor" name="buscarpor" value={{$buscarpor}} >
@@ -29,8 +29,8 @@
                 <th>{{$itemcategoria->codcategoria}}</th>
                 <td>{{$itemcategoria->descripcion}}</td>
                 <td>
-                    <a href="" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Editar</a>
-                    <a href="" class="btn btn-danger btn-sm"><i class="fas fa-edit"></i>Eliminar</a>
+                    <a href="{{route('categoria.edit',$itemcategoria->codcategoria)}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Editar</a>
+                    <a href="{{route('categoria.confirmar',$itemcategoria->codcategoria)}}" class="btn btn-danger btn-sm"><i class="fas fa-edit"></i>Eliminar</a>
                 </td>
                 </tr>
                 @endforeach

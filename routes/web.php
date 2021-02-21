@@ -22,3 +22,7 @@ Route::get('/', function () {
 
 
 Route::resource('categoria','CategoriaController');
+Route::get('cancelar', function(){
+    return redirect()->route('categoria.index')->with('datos','Accion Cancelada');
+})->name('cancelar');
+Route::get('categoria/{codcategoria}/confirmar','CategoriaController@confirmar')->name('categoria.confirmar');
