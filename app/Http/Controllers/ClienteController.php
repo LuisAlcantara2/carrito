@@ -32,4 +32,31 @@ class ClienteController extends Controller
         return redirect()->route('cliente.index')->with('datos','Registro Nuevo Guardado!!');
         
     }
+    public function edit($id)
+    {
+        $cliente=Cliente::findOrFail($id);
+        return view('tablas/clientes.edit',compact('cliente'));
+    }
+    public function update(Request $request, $id)
+    {
+        $cliente=Cliente::findOrFail($id);
+        $cliente->nombre=$request->nombre;
+        $cliente->direccion=$request->direccion;
+        $cliente->rucdni=$request->rucdni;
+        $cliente->email=$request->email;
+        $cliente->save(); 
+        return redirect()->route('cliente.index')->with('datos','Registro Actualizado');
+    }
+    public function confirmar($id)
+    {
+        $cliente=Cliente::findOrFail($id);
+        return view('tablas/clientes.confirmar',compact('cliente'));
+    }
+    public function destroy($id)
+    {
+        $cliente=Cliente::findOrFail($id);
+        DB::table('cliente')->where('codcliente', '=', $id)->delete();
+        $cliente->save(); 
+        return redirect()->route('cliente.index')->with('datos','Registro Eliminado');
+    }
 }

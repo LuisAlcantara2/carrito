@@ -34,8 +34,8 @@
                 <td>{{$itemcliente->rucdni}}</td>
                 <td>{{$itemcliente->email}}</td>
                 <td>
-                    <a href="" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Editar</a>
-                    <a href="" class="btn btn-danger btn-sm"><i class="fas fa-edit"></i>Eliminar</a>
+                    <a href="{{route('cliente.edit',$itemcliente->codcliente)}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Editar</a>
+                    <a href="{{route('cliente.confirmar',$itemcliente->codcliente)}}" class="btn btn-danger btn-sm"><i class="fas fa-edit"></i>Eliminar</a>
                 </td>
                 </tr>
                 @endforeach
