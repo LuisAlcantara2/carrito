@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-
+use DB;
 class UserController extends Controller
 {
     public function login(Request $request){
@@ -22,7 +22,8 @@ class UserController extends Controller
             $hashp=$query[0]->password;
             $password=$request->get('password');
             if(password_verify($password,$hashp)){
-                return view('welcome');
+                $user=DB::table('user')->where('name','=',$name)->get();
+                return view('bienvenido');
             }else{
                 return back()->withErrors(['password'=>'Contraseña no valida'])->withInput([request('password')]);
             }
@@ -30,6 +31,6 @@ class UserController extends Controller
         else
         {
             return back()->withError(['name'=>'Usuario no valido'])->withInput([request('name')]);
-        }
+         }
     }
 }
