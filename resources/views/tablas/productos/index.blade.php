@@ -1,3 +1,6 @@
+@extends('layout.plantilla')
+@section('contenido')
+
 <h1>LISTADO DE PRODUCTOS</h1>
 
 <a href="{{route('producto.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i>Nuevo Registro</a>
@@ -44,3 +47,4 @@
             </table>
     {{$producto->links()}}
             
+@endsection

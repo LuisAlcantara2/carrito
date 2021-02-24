@@ -43,11 +43,11 @@ create table CATEGORIA(
     descripcion varchar(40)
 );
 
+insert into users("name","email","password")
+values('admin','admin@gmail.com','$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi')
 
 
-
-
-DROP TABLE IF EXISTS `cabeceraventas`;
+/*DROP TABLE IF EXISTS `cabeceraventas`;
 CREATE TABLE IF NOT EXISTS `cabeceraventas` (
   `venta_id` int NOT NULL AUTO_INCREMENT,
   `cliente_id` int NOT NULL,
@@ -204,3 +204,4 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+*/

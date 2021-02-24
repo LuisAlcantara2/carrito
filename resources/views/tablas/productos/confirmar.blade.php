@@ -1,3 +1,6 @@
+@extends('layout.plantilla')
+@section('contenido')
+
 <div class="container">
     <br>
     <div class="card">
@@ -30,3 +33,4 @@
         </div>
     </div>
 </div>
+@endsection

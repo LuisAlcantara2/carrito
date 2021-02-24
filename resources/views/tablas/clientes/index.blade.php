@@ -1,3 +1,5 @@
+@extends('layout.plantilla')
+@section('contenido')
 
 <h3>LISTADO DE CLIENTES</h3>
 <a href="{{route('cliente.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i>Nuevo Registro</a>
@@ -23,6 +25,7 @@
                 <th scope="col">Direccion</th>
                 <th scope="col">DNI o RUC</th>
                 <th scope="col">Email</th>
+                <th scope="col">Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,3 +45,4 @@
             </tbody>
             </table>
     {{$cliente->links()}}            
+@endsection

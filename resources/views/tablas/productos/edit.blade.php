@@ -1,4 +1,7 @@
-    <div class="container">
+@extends('layout.plantilla')
+@section('contenido')
+
+<div class="container">
         <h1>Editar Registro</h1>    
     <form method="POST" action="{{ route('producto.update',$producto->codproducto)}}">
             @method('put')
@@ -56,3 +59,4 @@
         <a href="{{ route('cancelar1') }}" class="btn btn-danger"><i class="fas fa-ban"></i> Cancelar</a>
         </form>
     </div>
+@endsection

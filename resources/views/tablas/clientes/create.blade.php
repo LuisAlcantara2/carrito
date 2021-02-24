@@ -1,3 +1,6 @@
+@extends('layout.plantilla')
+@section('contenido')
+
 <h1>Crear Registro</h1>
 <form method="POST" action="{{route('cliente.store')}}">
     @csrf
@@ -24,3 +27,4 @@
   <button type="submit" class="btn btn-primary">Grabar</button>
   <a href="{{route('cancelar2')}}" class="btn btn-danger"><i class="fas fa-ban"></i>Cancelar</a>
 </form> 
+@endsection

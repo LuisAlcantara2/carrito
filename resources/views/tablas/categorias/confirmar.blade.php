@@ -1,4 +1,5 @@
-
+@extends('layout.plantilla')
+@section('contenido')
 
 <div class="container">
   <h1>Desea eliminar registro ? Codigo : {{$categoria->codcategoria}} - Descripcion : {{$categoria->descripcion}}</h1>
@@ -9,3 +10,5 @@
   <a href="{{route('cancelar')}}" class="btn btn-primary" ><i class="fas fa-times-circle"> </button></i>NO</a>
 </form>
 </div>
+
+@endsection

@@ -1,3 +1,5 @@
+@extends('layout.plantilla')
+@section('contenido')
 
 <h3>LISTADO DE CATEGORIAS</h3>
 <a href="{{route('categoria.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i>Nuevo Registro</a>
@@ -37,4 +39,4 @@
             </tbody>
             </table>
     {{$categoria->links()}}
-            
+@endsection

@@ -1,3 +1,6 @@
+@extends('layout.plantilla')
+@section('contenido')
+
 <div class="container">
     <h1>Crear Registro</h1>    
     <hr>
@@ -52,3 +55,4 @@
         <a href="{{ route('cancelar1') }}" class="btn btn-danger"><i class="fas fa-ban"></i> Cancelar</a>
     </form>
 </div>
+@endsection

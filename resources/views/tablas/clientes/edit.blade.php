@@ -1,3 +1,6 @@
+@extends('layout.plantilla')
+@section('contenido')
+
 <h1>Editar Registro</h1>   
 <form method="POST" action="{{ route('cliente.update',$cliente->codcliente)}}">
 @method('put')
@@ -25,3 +28,4 @@
   <button type="submit" class="btn btn-primary">Grabar</button>
   <a href="" class="btn btn-danger"><i class="fas fa-ban"></i>Cancelar</a>
 </form> 
+@endsection

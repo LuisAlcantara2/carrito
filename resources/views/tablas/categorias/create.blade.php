@@ -1,3 +1,5 @@
+@extends('layout.plantilla')
+@section('contenido')
 
 <h1>Crear Registro</h1>
 <form method="POST" action="{{route('categoria.store')}}">
@@ -14,3 +16,4 @@
   <button type="submit" class="btn btn-primary">Grabar</button>
   <a href="{{route('cancelar')}}" class="btn btn-danger"><i class="fas fa-ban"></i>Cancelar</a>
 </form> 
+@endsection
