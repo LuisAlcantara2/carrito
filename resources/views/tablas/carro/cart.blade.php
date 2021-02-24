@@ -31,7 +31,7 @@
                                 <input 
                                     type="number" 
                                     min="1" 
-                                    max="100" 
+                                    max="{{$item->stock}}" 
                                     value="{{$item->cantidad}}" 
                                     id="producto_{{$item->codproducto}}"
                                     class="actualizar"
