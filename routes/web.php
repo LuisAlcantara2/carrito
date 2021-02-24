@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 
 Route::resource('categoria','CategoriaController');
+Route::resource('cliente','ClienteController');
+
 Route::get('cancelar', function(){
     return redirect()->route('categoria.index')->with('datos','Accion Cancelada');
 })->name('cancelar');
