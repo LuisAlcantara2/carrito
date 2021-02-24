@@ -36,4 +36,9 @@ Route::get('/cancelar1', function(){
 })->name('cancelar1');
 Route::get('producto/{codproducto}/confirmar','ProductoController@confirmar')->name('producto.confirmar');
 
+Route::get('/cancelar2', function(){
+    return redirect()->route('cliente.index')->with('datos','Accion Cancelada');
+})->name('cancelar2');
+Route::get('cliente/{codcliente}/confirmar','ClienteController@confirmar')->name('cliente.confirmar');
+
 
