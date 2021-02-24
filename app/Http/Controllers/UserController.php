@@ -22,8 +22,7 @@ class UserController extends Controller
             $hashp=$query[0]->password;
             $password=$request->get('password');
             if(password_verify($password,$hashp)){
-                $user=DB::table('user')->where('name','=',$name)->get();
-                return view('bienvenido');
+                return view('layout/plantilla');
             }else{
                 return back()->withErrors(['password'=>'Contraseña no valida'])->withInput([request('password')]);
             }
