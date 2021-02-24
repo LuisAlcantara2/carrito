@@ -16,9 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/', function () {
+
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 
 Route::resource('categoria','CategoriaController');
@@ -42,3 +43,4 @@ Route::get('/cancelar2', function(){
 Route::get('cliente/{codcliente}/confirmar','ClienteController@confirmar')->name('cliente.confirmar');
 
 
+Route::post('/', 'UserController@login')->name('user.login');
