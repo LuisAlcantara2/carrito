@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('bienvenido');
 });
 
 /*Route::get('/', function () {
@@ -47,3 +47,14 @@ Route::get('cliente/{codcliente}/confirmar','ClienteController@confirmar')->name
 
 
 Route::post('/', 'UserController@login')->name('user.login');
+
+Route::get('carro/show',['as' => 'carro-show','uses'=>'CarroController@show']);  
+Route::get('carro/add/{producto}',['as' => 'carro-add','uses'=>'CarroController@add']); 
+Route::get('carro/delete/{producto}',['as' => 'carro-delete','uses'=>'CarroController@delete']); 
+Route::get('carro/trash',['as' => 'carro-trash','uses'=>'CarroController@trash']); 
+Route::get('carro/update/{producto}/{cantidad?}',['as' => 'carro-update','uses'=>'CarroController@update']); 
+Route::get('carro/listarProducto',['as' => 'carro-listar','uses'=>'CarroController@listarProducto']); 
+
+/*Route::bind('producto',function($codproducto){
+    return App\Producto::where('codproducto', $codproducto)->first();
+});*/   
