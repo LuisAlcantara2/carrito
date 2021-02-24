@@ -20,6 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/bienvenido', function () {
+    return view('bienvenido');
+});
 
 Route::resource('categoria','CategoriaController');
 Route::resource('cliente','ClienteController');

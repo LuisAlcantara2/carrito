@@ -1,3 +1,5 @@
+
+
 <div class="container">
   <h1>Desea eliminar registro ? Codigo : {{$categoria->codcategoria}} - Descripcion : {{$categoria->descripcion}}</h1>
     <form method="POST" action="{{ route('categoria.destroy', $categoria->codcategoria)}}">
