@@ -111,6 +111,28 @@ class CarroController extends Controller
     }
     public function storeCliente(Request $request)
     {
+        $data=request()->validate([
+            'nombre'=>'required|max:100',
+            'direccion'=>'required|max:80',
+            'rucdni'=>'required|digits:8',
+            'email'=>'required|email|unique:cliente,email',
+            'password'=>'required|max:255',
+        ],
+        [
+            'nombre.required'=>'Ingrese su nombre',
+            'nombre.max'=>'Maximo 100 caracteres para su nombre',
+            'direccion.required'=>'Ingrese su direccion',
+            'direccion.max'=>'Maximo 80 caracteres para direccion',
+            'rucdni.required'=>'Ingrese su DNI',
+            'rucdni.digits'=>'DNI debe tener 8 digitos',
+            'email.required'=>'Ingrese su correo',
+            'email.email'=>'Ingrese un correo valido',
+            'email.unique'=>'Ya ha sido registrado',
+            //'telefono.numeric'=>'Ingrese solo digitos',
+            'password.required'=>'Ingrese su correo',
+            'password'=>'Maximo de caracteres para password',
+            //'nroseguro.numeric'=>'Ingrese solo digitos',
+        ]);
         $cliente=new Cliente();
         $cliente->nombre=$request->nombre;
         $cliente->direccion=$request->direccion;
