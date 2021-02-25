@@ -21,6 +21,7 @@ class CreateVentaTable extends Migration
 			$table->decimal('igv',18,2);
             $table->decimal('total',18,2);
 			$table->integer('estado');
+            $table->integer('codcliente');
         });
     }
 
