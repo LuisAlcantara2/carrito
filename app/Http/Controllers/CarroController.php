@@ -61,7 +61,7 @@ class CarroController extends Controller
         }
         return $total;
     }
-    const PAGINATION=10;
+    const PAGINATION=4;
     public function listarProducto(Request $request){
         $categoria=Categoria::all(); 
         $buscarpor=$request->codcategoria;
