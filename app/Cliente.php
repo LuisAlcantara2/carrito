@@ -10,6 +10,6 @@ class Cliente extends Model
     protected $primaryKey="codcliente";
     public $timestamps =false;
     protected $fillable = [
-        'nombre','direccion','rucdni','email'
+        'nombre','direccion','rucdni','email','password'
     ];
 }

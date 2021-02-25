@@ -63,7 +63,7 @@
         <hr>
         <p>
             <a href="{{route('carro-listar')}}" class="btn btn-primary">Seguir comprando</a>
-            <a href="#" class="btn btn-primary">Continuar</a>
+            <a href="/auth/login" class="btn btn-primary">Continuar</a>
         </p>
         
     </div>

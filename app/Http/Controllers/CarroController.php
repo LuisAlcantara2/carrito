@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Cliente;
+use DB;
 class CarroController extends Controller
 {
     public function __construct(){
@@ -59,5 +61,60 @@ class CarroController extends Controller
     public function listarProducto(){
         $producto = Producto::all();
         return  view('tablas/carro.index',compact('producto'));
+    }
+    public function login(Request $request){
+        $data=request()->validate([
+            'name'=>'required',
+            'password'=>'required',
+        ],
+        [
+            'name.required'=>'Ingrese Usuario',
+            'password.required'=>'Ingrese Contraseña',
+        ]);
+        $name=$request->get('name');
+        $query=Cliente::where('email','=',$name)->get();
+        if($query->count()!=0){
+            $hashp=$query[0]->password;
+            $password=$request->get('password');
+            if(password_verify($password,$hashp)){
+                $cliente=DB::table('cliente')->where('email','=',$name)->get();
+                $carro = \Session::get('carro');
+                $total = $this->total();
+                return view('tablas/carro.validar',compact('cliente','carro','total'));
+            }else{
+                return back()->withErrors(['password'=>'Contraseña no valida'])->withInput([request('password')]);
+            }
+        }
+        else
+        {
+            return back()->withError(['name'=>'Usuario no valido'])->withInput([request('name')]);
+         }
+    }
+    public function createCliente()
+    {
+        return view('auth/registro');
+    }
+    public function storeCliente(Request $request)
+    {
+        $cliente=new Cliente();
+        $cliente->nombre=$request->nombre;
+        $cliente->direccion=$request->direccion;
+        $cliente->rucdni=$request->rucdni;
+        $cliente->email=$request->email;
+        $cliente->password=\Hash::make($request->password);
+        $cliente->save();
+        $carro = \Session::get('carro');
+        $total = $this->total();
+        dd($total);
+        return redirect()->route('carro-validar',compact('cliente','carro','total'))->with('datos','Registro Nuevo Guardado!!');
+        
+    }
+    public function validar(Request $request)
+    {
+        if(count(\Session::get('carro'))<=0) return redirect()->route('home');
+        $carro = \Session::get('carro');
+        $total = $this->total();
+        dd($total);
+        //return view('tablas/carro/validar', compact('carro','total'));
     }
 }
