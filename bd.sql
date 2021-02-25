@@ -1,13 +1,11 @@
 create table VENTA(
     codventa serial primary key,
-    numero int,
     numero_ticket int,
     fecha date,
     subtotal decimal(10,2),
     igv decimal(10,2),
     total decimal(10,2),
     estado int,
-    id int,
     codcliente int
 );
 
