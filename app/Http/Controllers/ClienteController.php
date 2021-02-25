@@ -59,4 +59,5 @@ class ClienteController extends Controller
         $cliente->save(); 
         return redirect()->route('cliente.index')->with('datos','Registro Eliminado');
     }
+    
 }

@@ -20,6 +20,11 @@ Route::get('/', function () {
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+Route::get('/auth/login', function () {
+    return view('auth/login');
+});
+
+
 
 Route::get('/bienvenido', function () {
     return view('bienvenido');
@@ -54,6 +59,11 @@ Route::get('carro/delete/{producto}',['as' => 'carro-delete','uses'=>'CarroContr
 Route::get('carro/trash',['as' => 'carro-trash','uses'=>'CarroController@trash']); 
 Route::get('carro/update/{producto}/{cantidad?}',['as' => 'carro-update','uses'=>'CarroController@update']); 
 Route::get('carro/listarProducto',['as' => 'carro-listar','uses'=>'CarroController@listarProducto']); 
+Route::get('carro/createCliente',['as' => 'carro-registrar','uses'=>'CarroController@createCliente']); 
+Route::post('carro/storeCliente',['as' => 'storeCliente','uses'=>'CarroController@storeCliente']); 
+Route::get('carro/validar',['as' => 'carro-validar','uses'=>'CarroController@validar']); 
+Route::post('/', 'CarroController@login')->name('carro.login');
+
 
 /*Route::bind('producto',function($codproducto){
     return App\Producto::where('codproducto', $codproducto)->first();
