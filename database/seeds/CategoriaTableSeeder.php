@@ -13,10 +13,22 @@ class CategoriaTableSeeder extends Seeder
     {
         $data = array(
             [
-                'descripcion'          =>  'PANTALONES',
+                'descripcion'          =>  'PANTALON',
             ],
             [
-                'descripcion'          =>  'CAMISAS',
+                'descripcion'          =>  'CAMISA',
+            ],
+            [
+                'descripcion'          =>  'ZAPATO',
+            ],
+            [
+                'descripcion'          =>  'CASACA',
+            ],
+            [
+                'descripcion'          =>  'POLOS',
+            ],
+            [
+                'descripcion'          =>  'SHORTS',
             ]
 
         );

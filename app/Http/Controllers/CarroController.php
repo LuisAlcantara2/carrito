@@ -169,7 +169,6 @@ class CarroController extends Controller
         $tempfecha=Carbon::now();
         $cuenta=\DB::table('venta')->count()+1;
         $venta = Venta::create([
-            'numero' => $cuenta,
             'numero_ticket' => $cuenta,
             'fecha' => $tempfecha,
             'subtotal' => $subtotal/1.18,

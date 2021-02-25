@@ -607,6 +607,7 @@ class ComposerStaticInit7261ef909843127dbd032f7d133e26a3
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'CategoriaTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CategoriaTableSeeder.php',
+        'ClienteTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ClienteTableSeeder.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
