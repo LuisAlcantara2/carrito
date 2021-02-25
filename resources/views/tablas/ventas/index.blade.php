@@ -29,7 +29,7 @@
             <tbody>
                 @foreach($venta as $itemventa)
                 <tr>
-                <th>{{$itemventa->numero}}</th>
+                <th>{{$itemventa->codventa}}</th>
                 <td>{{$itemventa->fecha}}</td>
                 <td>{{$itemventa->nombre}}</td>
                 <td>{{$itemventa->total}}</td>

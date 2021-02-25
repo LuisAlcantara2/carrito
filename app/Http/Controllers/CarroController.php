@@ -148,8 +148,8 @@ class CarroController extends Controller
         $detalle = Detalleventa::create([
             'precio'=> $producto->precio,
             'cantidad' => $producto->cantidad,
-            'codventa' => $producto->codproducto,
-            'codproducto' => $codventa
+            'codventa' => $codventa,
+            'codproducto' => $producto->codproducto
         ]);
     }
 }
