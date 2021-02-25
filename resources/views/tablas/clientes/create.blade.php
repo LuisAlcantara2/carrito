@@ -24,7 +24,7 @@
   </div>
   <div class="col-3">
     <label for="descripcion">Password</label>
-    <input type="text" class="form-control" id="password" name="password" placeholder="Ingrese contraseña">
+    <input type="text" class="form-control" id="password" name="password" type="password" placeholder="Ingrese contraseña">
   </div>
   </div>
   </div>

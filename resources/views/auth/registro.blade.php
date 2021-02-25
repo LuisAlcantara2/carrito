@@ -23,7 +23,7 @@
   </div>
   <div class="col-3">
     <label for="password">Password</label>
-    <input type="text" class="form-control" id="password" name="password" placeholder="Ingrese Password">
+    <input class="form-control" id="password" name="password" type="password" placeholder="Ingrese Password">
   </div>
   </div>
   </div>
