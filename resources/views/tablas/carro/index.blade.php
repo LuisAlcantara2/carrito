@@ -5,7 +5,7 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-            <th scope="col">Codigo</th>
+            <th scope="col">Imagen</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Categoria</th>
             <th scope="col">Stock</th>
@@ -16,7 +16,7 @@
         <tbody>
             @foreach($producto as $itemproducto)
             <tr>
-            <td>{{$itemproducto->codproducto}}</td>
+            <td><img src="{{$itemproducto->imagen}}" alt="" height="90" width="90"></td>
             <td>{{$itemproducto->nombre}}</td>
             <td>{{$itemproducto->categoria->descripcion}}</td>
             <td>{{$itemproducto->stock}}</td>

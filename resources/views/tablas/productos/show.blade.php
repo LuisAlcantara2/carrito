@@ -8,6 +8,7 @@
     <div class="product-block">
         <h3>{{$producto->nombre}}</h3>
         <div class="product-info">
+            <img src="{{$producto->imagen}}" alt="">
             <p>Precio: S/.{{number_format($producto->precio,2)}}</p>
             <p>
                 <a href="{{route('carro-add', $producto->codproducto)}}">Lo quiero</a>
