@@ -46,9 +46,9 @@
         </span>
     </h3><hr>
     <p>
-        <a href="{{route('carro-show')}}" class="btn btn-primary">
+        <a href="{{route('carro-show')}}" class="btn btn-danger">
             <i class="fa fa-chevron-circle-left"></i> Regresar</a>
-        <a href="{{route('guardar', $cliente->codcliente)}}" class="btn btn-warning">
-            <i class=""></i> Continuar</a>
+        <a href="{{route('guardar', $cliente->codcliente)}}" class="btn btn-primary">
+            <i class=""></i> Continuar <i class="fas fa-chevron-circle-right"></i></a>
     </p>
 @endsection

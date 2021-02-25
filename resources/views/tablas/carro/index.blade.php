@@ -14,6 +14,14 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filtrar</button>
         </form>
     </nav>
+    @if(session('datos'))
+    <div class="alert alert-warning alert-dismissile fade show mt-3" role="alert">
+    {{session ('datos') }}
+    <button class="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>    
+    </div>
+    @endif
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -35,7 +43,7 @@
             <td>{{$itemproducto->precio}}</td>
             <td>
                 <a href="{{route('producto.show', $itemproducto->codproducto)}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Detalle</a>
-                <a href="{{route('carro-add', $itemproducto->codproducto)}}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i>Agregar al carrito</a>
+                <a href="{{route('carro-add', $itemproducto->codproducto)}}" class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i> Agregar al carrito</a>
             </td>
             </tr>
             @endforeach
@@ -44,4 +52,4 @@
 
 
 </div>
-@stop
+@endsection

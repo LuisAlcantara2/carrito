@@ -14,7 +14,7 @@
             <p>{{$producto->descripcion}}</p>
             <p>Precio: S/.{{number_format($producto->precio,2)}}</p>
             <p>
-                <a href="{{route('carro-add', $producto->codproducto)}}" class="btn btn-primary">Lo quiero</a> <a class="btn btn-danger" href="{{route('carro-listar')}}">Regresar</a></p>
+                <a href="{{route('carro-add', $producto->codproducto)}}" class="btn btn-primary"> <i class="fas fa-cart-plus"></i> Lo quiero</a> <a class="btn btn-danger" href="{{route('carro-listar')}}"> <i class="fas fa-arrow-alt-circle-left"></i> Regresar</a></p>
         </div>
     </div>
     

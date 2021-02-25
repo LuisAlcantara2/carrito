@@ -73,6 +73,10 @@ class CarroController extends Controller
         }
         return  view('tablas/carro.index',compact('producto','categoria','buscarpor'));
     }
+    public function verlogin(){
+        if(count(\Session::get('carro'))<=0) return redirect()->route('carro-listar')->with('datos','NO HA SELECCIONADO NINGUN PRODUCTO');
+        return view('auth/login');
+    }
     public function login(Request $request){
         $data=request()->validate([
             'name'=>'required',
@@ -122,7 +126,7 @@ class CarroController extends Controller
     }
     public function validar(Request $request)
     {
-        if(count(\Session::get('carro'))<=0) return redirect()->route('home');
+        if(count(\Session::get('carro'))<=0) return redirect()->route('carro-listar')->with('message','COMPRA ALGO MRD');
         $carro = \Session::get('carro');
         $total = $this->total();
         return view('tablas/carro/validar', compact('carro','total'));
@@ -131,7 +135,7 @@ class CarroController extends Controller
     {
         $this->guardarVenta($cod);
         \Session::forget('carro');
-        return \Redirect::route('carro-show')->with('message','Compra realizada de forma correcta');
+        return \Redirect::route('carro-listar')->with('datos','Compra realizada de forma correcta');
     }
     protected function guardarVenta($codcliente){
         $subtotal = 0;

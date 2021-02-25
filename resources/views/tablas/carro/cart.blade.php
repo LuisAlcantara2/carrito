@@ -7,7 +7,7 @@
     <div class="table-carro">
         @if(count($carro))
         <p>
-            <a href="{{route('carro-trash')}}" class="btn btn-danger">Vaciar Carrito</a>
+            <a href="{{route('carro-trash')}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i>  Vaciar Carrito</a>
         </p>
         <div class="table-responsive">
             <table class="table table-striped table-hover-table-bordered">
@@ -38,15 +38,18 @@
                                 >
                                 <a 
                                     href="#" 
-                                    class="btn btn-warning btn-update-item" 
+                                    class="btn btn-warning" 
                                     data-href="{{route('carro-update', $item->codproducto)}}" 
                                     data-id="{{$item->codproducto}}">
+                                    <i class="fas fa-redo"></i> 
                                 </a>
                             </td>
                             <td>{{number_format($item->precio* $item->cantidad,2)}}</td>
                             <td>
                                 <a href="{{route('carro-delete',$item->codproducto)}}" class="btn btn-danger">
-                                    x
+                                    <i class="fas fa-ban"></i>
+
+
                                 </a>
                             </td>
                         </tr>
@@ -62,8 +65,8 @@
         @endif
         <hr>
         <p>
-            <a href="{{route('carro-listar')}}" class="btn btn-primary">Seguir comprando</a>
-            <a href="/auth/login" class="btn btn-primary">Continuar</a>
+            <a href="{{route('carro-listar')}}" class="btn btn-primary"><i class="fas fa-backward"></i> Seguir comprando</a>
+            <a href="{{route('carro-login')}}" class="btn btn-primary"> Continuar <i class="fas fa-forward"></i></a>
         </p>
         
     </div>
