@@ -10,13 +10,11 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($cliente as $itemcliente)
         <tr>
-        <td>{{$itemcliente->nombre}}</td>
-        <td>{{$itemcliente->direccion}}</td>
-        <td>{{$itemcliente->email}}</td>
+        <td>{{$cliente->nombre}}</td>
+        <td>{{$cliente->direccion}}</td>
+        <td>{{$cliente->email}}</td>
         </tr>
-        @endforeach
     </tbody>
     </table>
 <h1>DETALLE DE PEDIDO</h1>
@@ -50,7 +48,7 @@
     <p>
         <a href="{{route('carro-show')}}" class="btn btn-primary">
             <i class="fa fa-chevron-circle-left"></i> Regresar</a>
-        <a href="" class="btn btn-warning">
+        <a href="{{route('guardar', $cliente->codcliente)}}" class="btn btn-warning">
             <i class=""></i> Continuar</a>
     </p>
 @endsection

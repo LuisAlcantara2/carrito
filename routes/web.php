@@ -66,6 +66,7 @@ Route::get('carro/listarProducto',['as' => 'carro-listar','uses'=>'CarroControll
 Route::get('carro/createCliente',['as' => 'carro-registrar','uses'=>'CarroController@createCliente']); 
 Route::post('carro/storeCliente',['as' => 'storeCliente','uses'=>'CarroController@storeCliente']); 
 Route::get('carro/validar',['as' => 'carro-validar','uses'=>'CarroController@validar']); 
+Route::get('carro/guardar/{cod}',['as' => 'guardar','uses'=>'CarroController@guardar']); 
 Route::post('/', 'CarroController@login')->name('carro.login');
 
 Route::get('venta/{codventa}/detalle','VentaController@detalle')->name('venta.detalle');

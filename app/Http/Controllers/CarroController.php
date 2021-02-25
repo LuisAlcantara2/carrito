@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Cliente;
+use App\Venta;
+use App\Detalleventa;
 use DB;
 class CarroController extends Controller
 {
@@ -77,7 +79,7 @@ class CarroController extends Controller
             $hashp=$query[0]->password;
             $password=$request->get('password');
             if(password_verify($password,$hashp)){
-                $cliente=DB::table('cliente')->where('email','=',$name)->get();
+                $cliente=DB::table('cliente')->where('email','=',$name)->first();
                 $carro = \Session::get('carro');
                 $total = $this->total();
                 return view('tablas/carro.validar',compact('cliente','carro','total'));
@@ -116,5 +118,38 @@ class CarroController extends Controller
         $total = $this->total();
         dd($total);
         //return view('tablas/carro/validar', compact('carro','total'));
+    }
+    public function guardar($cod)
+    {
+        $this->guardarVenta($cod);
+        \Session::forget('carro');
+        return \Redirect::route('carro-show')->with('message','Compra realizada de forma correcta');
+    }
+    protected function guardarVenta($codcliente){
+        $subtotal = 0;
+        $carro = \Session::get('carro');
+
+        foreach($carro as $item){
+            $subtotal += $item->cantidad * $item->precio;
+        }
+        $venta = Venta::create([
+            
+            'subtotal' => $subtotal/1.18,
+            'igv' => $subtotal*0.18,
+            'total' => $subtotal,
+            'estado' => 1,
+            'codcliente' => $codcliente
+        ]);
+        foreach($carro as $item){
+            $this->guardarVentaDetalle($item,$venta->codventa);
+        }
+    }
+    protected function guardarVentaDetalle($producto, $codventa){
+        $detalle = Detalleventa::create([
+            'precio'=> $producto->precio,
+            'cantidad' => $producto->cantidad,
+            'codventa' => $producto->codproducto,
+            'codproducto' => $codventa
+        ]);
     }
 }
