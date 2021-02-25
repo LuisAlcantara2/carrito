@@ -85,7 +85,7 @@ class CarroController extends Controller
         if($query->count()!=0){
             $hashp=$query[0]->password;
             $password=$request->get('password');
-            if(password_verify($password,$hashp)){
+            if($password==$hashp){
                 $cliente=DB::table('cliente')->where('email','=',$name)->first();
                 $carro = \Session::get('carro');
                 $total = $this->total();
@@ -110,7 +110,7 @@ class CarroController extends Controller
         $cliente->direccion=$request->direccion;
         $cliente->rucdni=$request->rucdni;
         $cliente->email=$request->email;
-        $cliente->password=\Hash::make($request->password);
+        $cliente->password=$request->password;
         $cliente->save();
         $carro = \Session::get('carro');
         $total = $this->total();

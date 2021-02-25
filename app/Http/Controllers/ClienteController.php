@@ -28,6 +28,7 @@ class ClienteController extends Controller
         $cliente->direccion=$request->direccion;
         $cliente->rucdni=$request->rucdni;
         $cliente->email=$request->email;
+        $cliente->password=$request->password;
         $cliente->save();
         return redirect()->route('cliente.index')->with('datos','Registro Nuevo Guardado!!');
         
@@ -44,6 +45,7 @@ class ClienteController extends Controller
         $cliente->direccion=$request->direccion;
         $cliente->rucdni=$request->rucdni;
         $cliente->email=$request->email;
+        $cliente->password=$request->password;
         $cliente->save(); 
         return redirect()->route('cliente.index')->with('datos','Registro Actualizado');
     }

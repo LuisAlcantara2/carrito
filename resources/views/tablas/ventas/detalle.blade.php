@@ -29,7 +29,9 @@
                 </tr>
                 @endforeach
             </tbody>
+
             </table>
+            <a href="{{route('venta.index')}}" class="btn btn-primary"><i class="fas fa-plus"></i>Regresar</a>
     {{$venta->links()}}  
 
 @endsection

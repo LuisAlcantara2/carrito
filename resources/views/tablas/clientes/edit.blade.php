@@ -23,6 +23,10 @@
     <label for="descripcion">Email</label>
     <input type="text" class="form-control" id="email" name="email" value="{{ $cliente->email}}">
   </div>
+  <div class="col-3">
+    <label for="descripcion">Password</label>
+    <input type="text" class="form-control" id="password" name="password" value="{{ $cliente->password}}">
+  </div>
   </div>
   </div>
   <button type="submit" class="btn btn-primary">Grabar</button>
