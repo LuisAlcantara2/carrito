@@ -55,7 +55,7 @@ Route::get('/cancelar2', function(){
 Route::get('cliente/{codcliente}/confirmar','ClienteController@confirmar')->name('cliente.confirmar');
 
 
-Route::post('/', 'UserController@login')->name('user.login');
+Route::post('/login', 'UserController@login')->name('user.login');
 
 Route::get('carro/show',['as' => 'carro-show','uses'=>'CarroController@show']);  
 Route::get('carro/add/{producto}',['as' => 'carro-add','uses'=>'CarroController@add']); 
