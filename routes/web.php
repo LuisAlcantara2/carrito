@@ -68,6 +68,8 @@ Route::post('carro/storeCliente',['as' => 'storeCliente','uses'=>'CarroControlle
 Route::get('carro/validar',['as' => 'carro-validar','uses'=>'CarroController@validar']); 
 Route::post('/', 'CarroController@login')->name('carro.login');
 
+Route::get('venta/{codventa}/detalle','VentaController@detalle')->name('venta.detalle');
+
 
 /*Route::bind('producto',function($codproducto){
     return App\Producto::where('codproducto', $codproducto)->first();

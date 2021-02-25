@@ -34,7 +34,7 @@
                 <td>{{$itemventa->nombre}}</td>
                 <td>{{$itemventa->total}}</td>
                 <td>
-                    <a href="" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Editar</a>
+                    <a href="{{route('venta.detalle',$itemventa->codventa)}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Detalles</a>
                     <a href="" class="btn btn-danger btn-sm"><i class="fas fa-edit"></i>Eliminar</a>
                 </td>
                 </tr>
