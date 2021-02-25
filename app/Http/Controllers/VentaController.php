@@ -15,7 +15,7 @@ class VentaController extends Controller
         $buscarpor=$request->buscarpor;
         $venta=DB::table('venta as v')->join('cliente as c','c.codcliente','=','v.codcliente')
         ->where('codventa','like','%'.$buscarpor.'%')
-        ->select('v.codventa','v.numero','v.fecha','v.total','c.nombre')
+        ->select('v.codventa','v.numero_ticket','v.fecha','v.total','c.nombre')
         ->paginate($this::PAGINATION);
         return view('tablas/ventas/index',compact('venta','buscarpor'));
     }

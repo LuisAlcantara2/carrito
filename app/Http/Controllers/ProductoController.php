@@ -14,7 +14,7 @@ class ProductoController extends Controller
     public function index(Request $request)
     {
         $buscarpor=$request->buscarpor;
-        $producto=Producto::where('nombre','like','%'.$buscarpor.'%')->paginate($this::PAGINATION);
+        $producto=Producto::where('nombre','ilike','%'.$buscarpor.'%')->paginate($this::PAGINATION);
         return view('tablas/productos/index',compact('producto','buscarpor'));
     }
     public function create()
