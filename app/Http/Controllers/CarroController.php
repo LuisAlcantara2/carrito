@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Producto;
 use App\Categoria;
 use App\Cliente;
+use Carbon\Carbon;
 use App\Venta;
 use App\Detalleventa;
 use DB;
@@ -113,9 +114,10 @@ class CarroController extends Controller
         $cliente->email=$request->email;
         $cliente->password=$request->password;
         $cliente->save();
+        
         $carro = \Session::get('carro');
         $total = $this->total();
-        return redirect()->route('carro-validar',compact('cliente','carro','total'))->with('datos','Registro Nuevo Guardado!!');
+        return view('tablas/carro/validar',compact('cliente','carro','total'));
         
     }
     public function validar(Request $request)
@@ -138,8 +140,12 @@ class CarroController extends Controller
         foreach($carro as $item){
             $subtotal += $item->cantidad * $item->precio;
         }
+        $tempfecha=Carbon::now();
+        $cuenta=\DB::table('venta')->count()+1;
         $venta = Venta::create([
-            
+            'numero' => $cuenta,
+            'numero_ticket' => $cuenta,
+            'fecha' => $tempfecha,
             'subtotal' => $subtotal/1.18,
             'igv' => $subtotal*0.18,
             'total' => $subtotal,
