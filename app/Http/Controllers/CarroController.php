@@ -123,8 +123,7 @@ class CarroController extends Controller
         if(count(\Session::get('carro'))<=0) return redirect()->route('home');
         $carro = \Session::get('carro');
         $total = $this->total();
-        dd($total);
-        //return view('tablas/carro/validar', compact('carro','total'));
+        return view('tablas/carro/validar', compact('carro','total'));
     }
     public function guardar($cod)
     {
