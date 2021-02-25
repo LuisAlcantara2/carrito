@@ -30,6 +30,7 @@ Route::get('/bienvenido', function () {
 
 Route::resource('categoria','CategoriaController');
 Route::resource('cliente','ClienteController');
+Route::resource('venta','VentaController');
 
 Route::get('cancelar', function(){
     return redirect()->route('categoria.index')->with('datos','Accion Cancelada');
