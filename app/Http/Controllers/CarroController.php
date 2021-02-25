@@ -65,9 +65,10 @@ class CarroController extends Controller
         $categoria=Categoria::all(); 
         $buscarpor=$request->codcategoria;
         if($buscarpor=="" || $buscarpor=="0"){
-            $producto=Producto::all();
+            $producto=Producto::where('stock','<>',0)->get();
         }else{
-            $producto = Producto::where('codcategoria','=',$buscarpor)->get();
+            $producto = Producto::where('codcategoria','=',$buscarpor)
+            ->where('stock','<>',0)->get();
         }
         return  view('tablas/carro.index',compact('producto','categoria','buscarpor'));
     }
@@ -157,5 +158,8 @@ class CarroController extends Controller
             'codventa' => $codventa,
             'codproducto' => $producto->codproducto
         ]);
+        $prod=Producto::findOrFail($producto->codproducto);
+        $prod->stock=$prod->stock-$producto->cantidad;
+        $prod->save(); 
     }
 }
