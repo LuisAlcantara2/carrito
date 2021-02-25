@@ -8,9 +8,9 @@
         @csrf
         <div class="form-row">                
             <div class="form-group col-md-6">
-                <label for="descripcion">Descripcion</label>
-                <input type="text" class="form-control @error('descripcion') is-invalid @enderror" maxlength="30" id="descripcion" name="descripcion" autocomplete="off">              
-                @error('descripcion')    
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control @error('nombre') is-invalid @enderror" maxlength="30" id="nombre" name="nombre" autocomplete="off">              
+                @error('nombre')    
                     <span class="invalid-feedback" role="alert"> 
                     <strong>{{ $message }}</strong>
                     </span>   
@@ -49,6 +49,21 @@
                     <strong>{{ $message }}</strong>
                 </span>   
             @enderror     
+            </div>              
+        </div>     
+        <div class="form-row">                
+            <div class="form-group col-md-4">
+                <label for="imagen">Ingrese link de imagen</label>
+                
+                <input  class="form-control" id="imagen" name="imagen" style="text-align:right">
+            </div>              
+        </div>     
+        <div class="form-row">                
+            <div class="form-group col-md-4">
+                <label for="descripcion">Descripcion</label>
+                
+                <input  class="form-control" id="descripcion" name="descripcion">
+                    
             </div>              
         </div>     
         <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Grabar</button>

@@ -35,6 +35,8 @@ create table PRODUCTO(
     nombre varchar (40),
     precio decimal(10,2),
     stock int,
+    imagen text,
+    descripcion text,
     codcategoria int
 );
 
