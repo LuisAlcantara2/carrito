@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\Categoria;
 use App\Cliente;
 use App\Venta;
 use App\Detalleventa;
@@ -60,9 +61,15 @@ class CarroController extends Controller
         return $total;
     }
     const PAGINATION=10;
-    public function listarProducto(){
-        $producto = Producto::all();
-        return  view('tablas/carro.index',compact('producto'));
+    public function listarProducto(Request $request){
+        $categoria=Categoria::all(); 
+        $buscarpor=$request->codcategoria;
+        if($buscarpor=="" || $buscarpor=="0"){
+            $producto=Producto::all();
+        }else{
+            $producto = Producto::where('codcategoria','=',$buscarpor)->get();
+        }
+        return  view('tablas/carro.index',compact('producto','categoria','buscarpor'));
     }
     public function login(Request $request){
         $data=request()->validate([
@@ -107,7 +114,6 @@ class CarroController extends Controller
         $cliente->save();
         $carro = \Session::get('carro');
         $total = $this->total();
-        dd($total);
         return redirect()->route('carro-validar',compact('cliente','carro','total'))->with('datos','Registro Nuevo Guardado!!');
         
     }
