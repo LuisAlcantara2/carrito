@@ -37,7 +37,7 @@
                 <a class="nav-link" href="{{route('carro-show')}}">Carrito</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Iniciar Sesion</a>
+                <a class="nav-link" href="/login">Administrador</a>
               </li>
             </ul>
           </div>
