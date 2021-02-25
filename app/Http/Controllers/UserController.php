@@ -29,7 +29,7 @@ class UserController extends Controller
         }
         else
         {
-            return back()->withError(['name'=>'Usuario no valido'])->withInput([request('name')]);
+            return back()->withErrors(['name'=>'Usuario no valido'])->withInput([request('name')]);
          }
     }
 }

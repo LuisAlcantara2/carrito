@@ -20,16 +20,16 @@
             @csrf  
             <h4 class="form-title">Inicio de Sesión</h4>
             <div class="form-group">
-                    <label class="control-label">USUARIO:</label>
+                <label class="control-label">USUARIO:</label>
                 <div class="input-icon">
                     <i class="fas fa-user"></i>
-                    <input class="form-control @error('name') is-invalid @enderror"  type="text"  placeholder="Ingrese usuario" id="name" name="name" value="{{old('name')}}"/>                        
+                    <input class="form-control @error('name') is-invalid @enderror"  type="text"  placeholder="Ingrese su correo" id="name" name="name" value="{{old('name')}}"/>                        
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{$message}}</strong>
                     </span>
                     @enderror
-                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label class="control-label">CONTRASEÑA:</label>

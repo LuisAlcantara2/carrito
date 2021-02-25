@@ -13,7 +13,6 @@
       
 </head>
 <body class="login"> 
-
         <div class="logo">
         <!-- <img src="{{asset('/img/visa.png')}}" alt="Sistema de Ventas & ABC">
             <p>Sistema de Ventas & ABC</p> -->
