@@ -31,7 +31,7 @@
     <tbody>
         @foreach($carro as $item)
         <tr>
-        <td>Imagen</td>
+        <td><img src="{{$itemproducto->imagen}}" alt="" height="100" width="90"></td>
         <td>{{$item->nombre}}</td>
         <td>{{number_format($item->precio,2)}}</td>
         <td>{{$item->cantidad}}</td>

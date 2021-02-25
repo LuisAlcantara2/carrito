@@ -21,7 +21,7 @@
 <table class="table">
             <thead class="thead-dark">
                 <tr>
-                <th scope="col">Codigo</th>
+                <th scope="col">Imagen</th>
                 <th scope="col">Descripcion</th>
                 <th scope="col">Categoria</th>
                 <th scope="col">Stock</th>
