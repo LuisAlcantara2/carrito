@@ -2,6 +2,18 @@
 @section('contenido')
 <div class="products">
     <h1>LISTADO DE PRODUCTOS</h1>
+    <nav class="navbar float-right">
+        <form class="form-inline my-2 my-lg-0">
+            <select class="custom-select" id="codcategoria" name="codcategoria">
+                <option value="0" selected>Seleccione una categoria</option>
+                @foreach($categoria as $itemcategoria)
+                <option {{$itemcategoria->codcategoria == $buscarpor? 'selected' : ''}}
+                 value="{{$itemcategoria->codcategoria}}">{{$itemcategoria->descripcion}}</option>
+                @endforeach
+            </select>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filtrar</button>
+        </form>
+    </nav>
     <table class="table">
         <thead class="thead-dark">
             <tr>
