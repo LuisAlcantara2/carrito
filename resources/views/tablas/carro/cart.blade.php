@@ -38,7 +38,7 @@
                                 >
                                 <a 
                                     href="#" 
-                                    class="btn btn-warning" 
+                                    class="btn btn-warning btn-update-item" 
                                     data-href="{{route('carro-update', $item->codproducto)}}" 
                                     data-id="{{$item->codproducto}}">
                                     <i class="fas fa-redo"></i> 
@@ -48,8 +48,6 @@
                             <td>
                                 <a href="{{route('carro-delete',$item->codproducto)}}" class="btn btn-danger">
                                     <i class="fas fa-ban"></i>
-
-
                                 </a>
                             </td>
                         </tr>
