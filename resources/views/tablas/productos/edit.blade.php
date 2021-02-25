@@ -12,9 +12,9 @@
                 <input type="text" class="form-control" id="codproducto" name="codproducto" placeholder="Codigo" value="{{ $producto->codproducto}}" disabled>                
                 </div>
                 <div class="form-group col-md-12">
-                    <label for="descripcion">Descripcion</label>
-                    <input type="text" autocomplete="off" class="form-control @error('descripcion') is-invalid @enderror" maxlength="30" id="descripcion" name="descripcion" value="{{ $producto->nombre }}">
-                    @error('descripcion')    
+                    <label for="nombre">Nombre</label>
+                    <input type="text" autocomplete="off" class="form-control @error('nombre') is-invalid @enderror" maxlength="30" id="nombre" name="nombre" value="{{ $producto->nombre }}">
+                    @error('nombre')    
                         <span class="invalid-feedback" role="alert"> 
                         <strong>{{ $message }}</strong>
                         </span>   
@@ -54,7 +54,21 @@
                     </span>   
                 @enderror     
                 </div>              
-            </div>     
+            </div>
+            <div class="form-row">                
+            <div class="form-group col-md-4">
+                <label for="imagen">Ingrese link de imagen</label>
+                
+                <input  class="form-control" id="imagen" name="imagen" style="text-align:right" value="{{$producto->imagen}}">
+            </div>              
+        </div>     
+        <div class="form-row">                
+            <div class="form-group col-md-4">
+                <label for="descripcion">Descripcion</label>
+                <input  class="form-control" id="descripcion" name="descripcion" value="{{$producto->descripcion}}">
+                    
+            </div>              
+        </div>       
             <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Grabar</button>
         <a href="{{ route('cancelar1') }}" class="btn btn-danger"><i class="fas fa-ban"></i> Cancelar</a>
         </form>

@@ -25,7 +25,7 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         $data=request()->validate([
-            'descripcion'=>'required|max:30',
+            'nombre'=>'required|max:30',
             'codcategoria'=>'required',
             'precio'=>'required|min:0',
             'stock'=>'required|min:0'
@@ -40,10 +40,12 @@ class ProductoController extends Controller
             'stock.min'=>'Stock no puede ser negativo'
         ]);
         $producto=new Producto();
-        $producto->nombre=$request->descripcion;
+        $producto->nombre=$request->nombre;
         $producto->codcategoria=$request->codcategoria;
         $producto->precio=$request->precio;
         $producto->stock=$request->stock;
+        $producto->imagen=$request->imagen;
+        $producto->descripcion=$request->descripcion;
         $producto->save();
         return redirect()->route('producto.index')->with('datos','Registro Nuevo Guardado!!');
         
@@ -62,17 +64,19 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $data=request()->validate([
-            'descripcion'=>'required|max:30'
+            'nombre'=>'required|max:30'
         ],
         [
-            'descripcion.required'=>'Ingrese descripcion de producto',
-            'descripcion.max'=>'Ingrese un maximo de 30 caracteres'
+            'nombre.required'=>'Ingrese descripcion de producto',
+            'nombre.max'=>'Ingrese un maximo de 30 caracteres'
         ]);
         $producto=Producto::findOrFail($id);
-        $producto->nombre=$request->descripcion;
+        $producto->nombre=$request->nombre;
         $producto->codcategoria=$request->codcategoria;
         $producto->precio=$request->precio;
         $producto->stock=$request->stock;
+        $producto->imagen=$request->imagen;
+        $producto->descripcion=$request->descripcion;
         $producto->save(); 
         return redirect()->route('producto.index')->with('datos','Registro Actualizado');
     

@@ -32,14 +32,14 @@
             <tbody>
                 @foreach($producto as $itemproducto)
                 <tr>
-                <td>{{$itemproducto->codproducto}}</td>
+                <td><img src="{{$itemproducto->imagen}}" alt="" height="100" width="90"></td>
                 <td>{{$itemproducto->nombre}}</td>
                 <td>{{$itemproducto->categoria->descripcion}}</td>
                 <td>{{$itemproducto->stock}}</td>
                 <td>{{$itemproducto->precio}}</td>
                 <td>
                     <a href="{{route('producto.edit',$itemproducto->codproducto)}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Editar</a>
-                    <a href="{{route('producto.confirmar',$itemproducto->codproducto)}}" " class="btn btn-danger btn-sm"><i class="fas fa-edit"></i>Eliminar</a>
+                    <a href="{{route('producto.confirmar',$itemproducto->codproducto)}}" class="btn btn-danger btn-sm"><i class="fas fa-edit"></i>Eliminar</a>
                 </td>
                 </tr>
                 @endforeach
